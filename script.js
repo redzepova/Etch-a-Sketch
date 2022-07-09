@@ -1,5 +1,5 @@
 //set up grid//
-let gridSize = 25;
+let gridSize = 40;
 const gridContainer = document.getElementById('grid-container');
 
 gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
@@ -15,7 +15,7 @@ for (i=1; i <= gridSize ** 2; i++) {
 const gridItem = document.querySelectorAll('.grid-item');
 
 gridItem.forEach(element => {
-    element.addEventListener('mouseover', () => {
+    element.addEventListener('mousedown', () => {
     element.removeAttribute('.grid-item');
     element.classList.add('grid-hover');
     });
