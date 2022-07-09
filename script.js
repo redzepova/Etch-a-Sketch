@@ -11,7 +11,7 @@ for (i=1; i <= gridSize ** 2; i++) {
     div.setAttribute('class', 'grid-item');
 };
 
-//
+//loop through node list and add mousedown event listener to each child of grid.
 const gridItem = document.querySelectorAll('.grid-item');
 
 gridItem.forEach(element => {
