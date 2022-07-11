@@ -5,19 +5,19 @@
     width: 600px;
     height: 600px;
     margin: 2vw;
-    border-color: #006d77;
+    border-color: #14213D;
     border-width: .5vw;
     border-style: solid;
 }
 
 .grid-item{
     background-color:white;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 1px solid  rgb(20, 33, 119);
 }
 
 body {
     display: flex;
-    background-color: #edf6f9;
+    background-color: #FFFFFF;
 }
 
 #settings-container {
@@ -28,6 +28,7 @@ body {
     width: 20vw;
     padding: 2vw;
     margin: 2vw;
+    background-color: rgb(252, 163, 17,.5)
 }
 
 .settings {
@@ -41,7 +42,7 @@ body {
     appearance: none;
     width: 75%;
     height: 25px;
-    background: #d3d3d3;
+    background: #e5e5e5;
     outline: none;
     opacity: .7;
 }
@@ -56,12 +57,12 @@ body {
     height: 25px;
     width: 25px;
     border-radius: 50%;
-    background: #0a9396;
+    background: rgb(20, 33, 119);
 }
 
 #grid-size::-moz-range-thumb {
     height: 25px;
     width: 25px;
     border-radius: 50%;
-    background: #0a9396;
+    background: rgb(39, 64, 119);
 }
