@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
 #grid-container{
     display: grid;
     width: 900px;
@@ -12,4 +14,16 @@
 
 body {
     display: flex
+}
+
+#settings {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2vw;
+    width: 10vw;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2vw;
+    margin: 2vw;
 }

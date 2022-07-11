@@ -1,7 +1,7 @@
 //set up grid//
 let gridSize = 40;
 const gridContainer = document.getElementById('grid-container');
-let userColor = "red"
+let userColor = document.getElementById('color').value;
 
 gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 
