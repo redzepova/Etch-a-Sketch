@@ -15,8 +15,10 @@ for (i=1; i <= gridSize ** 2; i++) {
 const gridItem = document.querySelectorAll('.grid-item');
 
 gridItem.forEach(element => {
-    element.addEventListener('mousedown', () => {
-    element.removeAttribute('.grid-item');
-    element.classList.add('grid-hover');
-    });
+    element.addEventListener('mouseover', changeColor);
+    console.log(gridItem.length);
 });
+
+function changeColor (e) {
+    e.target.style.backgroundColor = "red";
+};
