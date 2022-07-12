@@ -65,11 +65,14 @@ function removeGrid (parent) {
 
 
 function changeColor (e) {
-   // userColor = document.getElementById('color').value;
-   r = rainbowColor();
-   g = rainbowColor();
-   b = rainbowColor();
-   userColor = `rgb(${r}, ${g}, ${b})`;
+    if(rainbowMode === false) {
+        userColor = document.getElementById('color').value;
+    } else {
+        r = rainbowColor();
+        g = rainbowColor();
+        b = rainbowColor();
+        userColor = `rgb(${r}, ${g}, ${b})`;
+    };
     e.target.style.backgroundColor = userColor;
 }; 
 
