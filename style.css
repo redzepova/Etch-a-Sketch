@@ -68,14 +68,17 @@ body {
 }
 
 #toggle-light {
-    height: 120%;
-    width: 10%;
+    height: 50px;
+    width: 50px;
     background-color: rgb(20, 33, 119);
 }
 
 button {
     display: flex;
     font-family: 'Quicksand', sans-serif;
+    font-size: large;
+    background: rgb(39, 64, 119);
+    color: #e5e5e5;
 }
 
 button:hover {

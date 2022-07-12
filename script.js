@@ -9,6 +9,10 @@ let gridItem = document.querySelector('.grid-item');
 let r = 0;
 let g = 0;
 let b = 0;
+const rainbowButton = document.getElementById('rainbow-button');
+const toggleLight = document.getElementById('toggle-light');
+let rainbowMode = false;
+
 
 createGrid(gridSize);
 
@@ -23,7 +27,15 @@ sizeSelector.addEventListener("input", () => {
     createGrid(gridSize);
 });
 
-
+rainbowButton.addEventListener('click', () => {
+    if (rainbowMode === false) {
+        rainbowMode = true;
+        toggleLight.style.backgroundColor = 'rgb(251, 227, 19)';
+    } else {
+        rainbowMode = false;
+        toggleLight.style.backgroundColor = 'rgb(20, 33, 119)';
+    };
+})
 
 function createGrid (size) {
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
