@@ -2,12 +2,13 @@
 
 #grid-container{
     display: grid;
-    width: 600px;
-    height: 600px;
+    width: 45rem;
+    height: 45rem;
     margin: 2vw;
     border-color: #14213D;
     border-width: .5vw;
     border-style: solid;
+    flex-shrink: 0;
 }
 
 .grid-item{
@@ -28,7 +29,8 @@ body {
     width: 20vw;
     padding: 2vw;
     margin: 2vw;
-    background-color: rgb(252, 163, 17,.5)
+    background-color: rgb(252, 163, 17,.5);
+    flex-shrink: 2;
 }
 
 .settings {
