@@ -1,6 +1,3 @@
-//set up grid//
-
-
 const sizeSelector = document.getElementById('grid-size');
 let gridSize = 40
 const gridContainer = document.getElementById('grid-container');
@@ -10,10 +7,12 @@ let r = 0;
 let g = 0;
 let b = 0;
 const rainbowButton = document.getElementById('rainbow-button');
-const toggleLight = document.getElementById('toggle-light');
 let rainbowMode = false;
+let eraserMode = false;
 const colorSelector = document.getElementById('color');
+const eraser = document.getElementById('eraser');
 
+//initial grid creation//
 
 createGrid(gridSize);
 
@@ -28,19 +27,28 @@ sizeSelector.addEventListener("input", () => {
     createGrid(gridSize);
 });
 
-rainbowButton.addEventListener('click', () => {
-    if (rainbowMode === false) {
-        rainbowMode = true;
-        toggleLight.style.backgroundColor = 'rgb(251, 227, 19)';
+rainbowButton.addEventListener ('click', ()  => {
+    rainbowMode = buttonToggle(rainbowMode, rainbowButton)
+});
+
+function buttonToggle (mode, button) {
+    if (mode === false) {
+        mode = true;
+        button.style.backgroundColor = 'rgb(252, 163, 17, .5)';
+        return mode;
     } else {
-        rainbowMode = false;
-        toggleLight.style.backgroundColor = 'rgb(20, 33, 119)';
+        mode = false;
+        button.style.backgroundColor = 'rgb(20, 33, 119)';
+        return mode;
     };
-})
+};
+
+eraser.addEventListener('click', () => {
+    eraserMode = buttonToggle(eraserMode, eraser);
+});
 
 colorSelector.addEventListener('input', () => {
     rainbowMode = false;
-    toggleLight.style.backgroundColor = 'rgb(20, 33, 119)';
 })
 
 function createGrid (size) {
@@ -67,17 +75,23 @@ function removeGrid (parent) {
     };
 };
 
+function toggleLight (parent) {
+    parent.firstChild
+}
+
 //loop through node list and add mousedown event listener to each child of grid.
 
 
 function changeColor (e) {
-    if(rainbowMode === false) {
-        userColor = document.getElementById('color').value;
-    } else {
+    if(eraserMode === true) {
+        userColor = 'white';
+    } else if (rainbowMode === true) {
         r = rainbowColor();
         g = rainbowColor();
         b = rainbowColor();
         userColor = `rgb(${r}, ${g}, ${b})`;
+    } else { 
+        userColor = document.getElementById('color').value;
     };
     e.target.style.backgroundColor = userColor;
 }; 

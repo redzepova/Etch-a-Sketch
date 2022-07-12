@@ -68,8 +68,8 @@ body {
 }
 
 #toggle-light {
-    height: 50px;
-    width: 50px;
+    height: 50%;
+    width: 10%;
     background-color: rgb(20, 33, 119);
 }
 
