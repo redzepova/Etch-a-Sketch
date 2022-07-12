@@ -5,28 +5,40 @@ const sizeSelector = document.getElementById('grid-size');
 let gridSize = 40
 const gridContainer = document.getElementById('grid-container');
 let userColor = document.getElementById('color').value;
-const gridItem = document.querySelectorAll('.grid-item');
+let gridItem = document.querySelector('.grid-item');
+
+createGrid(gridSize);
 
 
-gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+/* when size slider is moved "input" do the following:
+    Remove the existing grid by deleting the children of gridContainer
+    Create a new grid using the input from size Slider */
 
 sizeSelector.addEventListener("input", () => {
+    gridSize = sizeSelector.value;
     removeGrid(gridContainer);
-    createGrid();
+    createGrid(gridSize);
 });
 
-//grid pixels are added with class grid-item.
 
-function createGrid () {
-    gridSize = sizeSelector.value;
-    gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    for (i=1; i <= gridSize ** 2; i++) {
+
+function createGrid (size) {
+    gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    for (i=1; i <= size ** 2; i++) {
         const div = document.createElement('div');
         gridContainer.append(div);
         div.setAttribute('class', 'grid-item');
-        console.log(userColor);
+        gridItem = document.querySelectorAll('.grid-item');  
     };
+    gridItem.forEach(element => {
+        element.addEventListener('mouseover', changeColor);
+    });
 };
+
+/*This function actually happens first. Pass parent node to the function. While parent node has any children
+remove the first child until no more children.
+    removeGrid (grid container). While gridContainer has any gridItem divs, delete the first gridItem.
+    Do this until there are no more gridItems. */
 
 function removeGrid (parent) {
     while (parent.firstChild){
@@ -37,12 +49,7 @@ function removeGrid (parent) {
 //loop through node list and add mousedown event listener to each child of grid.
 
 
-gridItem.forEach(element => {
-    element.addEventListener('mouseover', changeColor);
-    console.log(gridItem.length);
-});
-
 function changeColor (e) {
     userColor = document.getElementById('color').value;
     e.target.style.backgroundColor = userColor;
-};
+}; 
