@@ -6,6 +6,9 @@ let gridSize = 40
 const gridContainer = document.getElementById('grid-container');
 let userColor = document.getElementById('color').value;
 let gridItem = document.querySelector('.grid-item');
+let r = 0;
+let g = 0;
+let b = 0;
 
 createGrid(gridSize);
 
@@ -50,6 +53,14 @@ function removeGrid (parent) {
 
 
 function changeColor (e) {
-    userColor = document.getElementById('color').value;
+   // userColor = document.getElementById('color').value;
+   r = rainbowColor();
+   g = rainbowColor();
+   b = rainbowColor();
+   userColor = `rgb(${r}, ${g}, ${b})`;
     e.target.style.backgroundColor = userColor;
 }; 
+
+function rainbowColor () {
+    return Math.floor(Math.random()* (255+1));
+};
