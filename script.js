@@ -12,6 +12,7 @@ let b = 0;
 const rainbowButton = document.getElementById('rainbow-button');
 const toggleLight = document.getElementById('toggle-light');
 let rainbowMode = false;
+const colorSelector = document.getElementById('color');
 
 
 createGrid(gridSize);
@@ -35,6 +36,11 @@ rainbowButton.addEventListener('click', () => {
         rainbowMode = false;
         toggleLight.style.backgroundColor = 'rgb(20, 33, 119)';
     };
+})
+
+colorSelector.addEventListener('input', () => {
+    rainbowMode = false;
+    toggleLight.style.backgroundColor = 'rgb(20, 33, 119)';
 })
 
 function createGrid (size) {
